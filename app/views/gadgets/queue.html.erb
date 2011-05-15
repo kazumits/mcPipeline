@@ -1,1 +1,18 @@
-<%= getQueueInfo %>
+<table id="queueData">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>state</th>
+    <th>start/submit</th>
+    <th>queue</th>
+  </tr>
+  <% getQueueInfo.each do |info| %>
+  <tr>
+    <td><%=info['JB_job_number']%></td>
+    <td><%=info['JB_name']%></td>
+    <td><%=info['state']%></td>
+    <td><%=info['JAT_start_time']%></td>
+    <td><%=info['queue_name']%></td>
+  </tr>
+  <% end %>
+</table>

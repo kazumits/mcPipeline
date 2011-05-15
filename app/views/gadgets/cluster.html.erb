@@ -1,1 +1,12 @@
-<%= getClusterInfo %>
+<table id="clusterData">
+  <tr>
+    <th>queue</th>
+    <th>available</th>
+  </tr>
+  <% getClusterInfo.each do |info| %>
+  <tr>
+    <td><%=info['name']%></td>
+    <td><%=[info['available'], info['available'].to_i + info['used'].to_i].join('/')%></td>
+  </tr>
+  <% end %>
+</table>

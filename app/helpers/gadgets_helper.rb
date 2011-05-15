@@ -17,7 +17,7 @@ module GadgetsHelper
 	xml = self.hgc_exec('qstat -g c -xml')
 	doc = REXML::Document.new xml
 	result = doc.elements['/job_info'].elements.map do |x|
-      Hash[x.elements.map {|y| [y.name, y.get_text] }]
+      Hash[x.elements.map {|y| [y.name, y.get_text.to_s] }]
 	end
     return result
   end

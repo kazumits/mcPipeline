@@ -1,4 +1,8 @@
 <div id="<%= gadget %>" class="box">
-	<h3><%= title %></h3>
-	<%= render :template => "/gadgets/#{gadget}" %>
+	<h3><%= title %>
+    <%= button_to_function('reload', %Q(reloadInfo("#{gadget}"))) %>
+    </h3>
+    <div class='data'>
+      <%= render :template => "/gadgets/#{gadget}" %>
+    </div>
 </div>
