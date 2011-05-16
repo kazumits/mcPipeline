@@ -7,6 +7,14 @@ reloadInfo = function(type) {
     obj.load("/gadgets/"+type, function(){
       obj.slideDown('fast');
     });
+  });   
+}
+
+launchJob = function() {
+  obj = $('div#queue div.data');
+  obj.slideUp('fast', function(){
+    obj.load("/gadgets/queue", function(){
+      obj.slideDown('fast');
+    });
   });
-   
 }
