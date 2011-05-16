@@ -1,9 +1,10 @@
 McPipeline::Application.routes.draw do
   get "gadgets/cluster"
-
   get "gadgets/queue"
+  get "gadgets/launch"
 
   get "home/index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

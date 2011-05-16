@@ -11,7 +11,9 @@
     <td><%=info['JB_job_number']%></td>
     <td><%=info['JB_name']%></td>
     <td><%=info['state']%></td>
-    <td><%=info['JAT_start_time']%></td>
+    <td><%=
+      info['state'] == 'r' ? info['JAT_start_time'] : info['JB_submission_time']
+    %></td>
     <td><%=info['queue_name']%></td>
   </tr>
   <% end %>

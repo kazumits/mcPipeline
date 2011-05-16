@@ -12,9 +12,12 @@ reloadInfo = function(type) {
 
 launchJob = function() {
   obj = $('div#queue div.data');
+  stat = $('div#status');
   obj.slideUp('fast', function(){
-    obj.load("/gadgets/queue", function(){
-      obj.slideDown('fast');
+    stat.load("/gadgets/launch", function(){
+      obj.load("/gadgets/queue", function(){
+        obj.slideDown('fast');
+      });
     });
   });
 }
